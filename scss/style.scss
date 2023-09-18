@@ -2,15 +2,55 @@
 
 // Variables
 
-$textColor: red;
-$fontSize:2em;
+$textColor: rgb(55, 0, 255);
+$fontSize:2rem;
+$primaryColor:green;
+$secondColor:lightblue;
+$myColors: (
+    "softColor":rgb(255, 255, 134),
+    "flashColor":rgb(255, 0, 195),
+    "darkColor": rgb(11, 66, 11)
+);
+$fontWeights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 900
+);
+@function weight($weight){
+    @return map-get($fontWeights, $weight);
+}
+@function color($color){
+    @return map-get($myColors, $color);
+}
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid black 2px;
+}
 
-
-.article{
+.main{
+    background-color: $secondColor;
     color: $textColor;
     font-size: $fontSize;
-    
-}
-h1{
-    font-size: $fontSize * 3;
-}
+    @include center;
+    .section{
+        font-weight: weight(regular);
+        
+        .p1{
+            font-weight: weight(bold);
+            color: color(flashColor);
+        }
+    }
+        #{&}_section{
+            p:hover {
+                color: $primaryColor;
+            }
+        
+        }
+        
+
+    }
+
+
+

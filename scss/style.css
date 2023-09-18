@@ -1,8 +1,19 @@
-.article {
-  color: red;
-  font-size: 2em;
+.main {
+  background-color: lightblue;
+  color: rgb(55, 0, 255);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 2px;
 }
-
-h1 {
-  font-size: 6em;
+.main .section {
+  font-weight: 400;
+}
+.main .section .p1 {
+  font-weight: 900;
+  color: rgb(255, 0, 195);
+}
+.main .main_section p:hover {
+  color: green;
 }/*# sourceMappingURL=style.css.map */
