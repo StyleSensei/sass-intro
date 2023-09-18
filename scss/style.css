@@ -47,7 +47,7 @@ body {
   font-size: 3rem;
 }
 
-.blue, .red {
+.blue, .orange:hover, .red:hover {
   padding: 30px;
   background-color: blue;
 }/*# sourceMappingURL=style.css.map */

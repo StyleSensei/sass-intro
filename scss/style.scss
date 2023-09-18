@@ -83,8 +83,11 @@ body{
     padding:30px;
     background-color: blue;
 }
-.red{
+.red:hover{
     @extend .blue;
 }
-
+.orange:hover{
+    @extend .blue
+    
+}
 
