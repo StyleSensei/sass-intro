@@ -1,0 +1,16 @@
+// First SASS file
+
+// Variables
+
+$textColor: red;
+$fontSize:2em;
+
+
+.article{
+    color: $textColor;
+    font-size: $fontSize;
+    
+}
+h1{
+    font-size: $fontSize * 3;
+}
