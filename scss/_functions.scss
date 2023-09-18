@@ -1,0 +1,10 @@
+@function myColors ($color){
+    @return map-get($myFirstColors , $color );
+}
+
+@function weight($weight){
+    @return map-get($fontWeights, $weight);
+}
+@function color($color){
+    @return map-get($myFirstColors, $color);
+}

@@ -1,32 +1,42 @@
 // First SASS file
 
 // Variables
+@import 'reset';
+@import 'variables';
+@import 'functions';
 
-$textColor: rgb(55, 0, 255);
-$fontSize:2rem;
-$primaryColor:green;
-$secondColor:lightblue;
-$myColors: (
-    "softColor":rgb(255, 255, 134),
-    "flashColor":rgb(255, 0, 195),
-    "darkColor": rgb(11, 66, 11)
-);
-$fontWeights: (
-    "regular": 400,
-    "medium": 500,
-    "bold": 900
-);
-@function weight($weight){
-    @return map-get($fontWeights, $weight);
+body{
+    display:flex;
 }
-@function color($color){
-    @return map-get($myColors, $color);
+
+
+
+@mixin fontStyle{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: fontWeights(regular);
+    color: aquamarine;
+    font-size: 3rem;
 }
+
 @mixin center {
     display: flex;
     justify-content: center;
     align-items: center;
     border:solid black 2px;
+}
+
+@mixin theme($light-theme:true){
+    @if $light-theme {
+        background:lighten($text_color, 100%);
+        color:darken($text_color, 100%);
+    }    
+}
+@mixin hide($hide-element:true) {
+    @if $hide-element{
+        // margin-left:-10000px;
+        visibility: hidden;
+    }
 }
 
 .main{
@@ -48,9 +58,33 @@ $fontWeights: (
             }
         
         }
+        .p2 {
+            @extend .p1;
+            color:color(darkColor);
+        }
         
 
+        
+    }
+    .standard1{
+        color: myColors(softColor);
+        // @include hide;
+        
+    }
+    .standard2{
+        color: myColors(flashColor);
+    }
+    .special{
+        color: myColors(darkColor);
+        @include fontStyle();
     }
 
+.blue{
+    padding:30px;
+    background-color: blue;
+}
+.red{
+    @extend .blue;
+}
 
 
